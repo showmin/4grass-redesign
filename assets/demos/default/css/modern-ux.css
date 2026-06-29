@@ -1,0 +1,370 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;900&display=swap');
+
+/* Base Styles Override */
+body.modern-ux-mode {
+    font-family: 'Noto Sans TC', sans-serif !important;
+    background-color: #faf8f5 !important; /* Soft warm background */
+    color: #2b2b2b !important; /* Dark charcoal text */
+    line-height: 1.85 !important;
+    letter-spacing: 0.06em !important;
+}
+
+body.modern-ux-mode h1,
+body.modern-ux-mode h2,
+body.modern-ux-mode h3,
+body.modern-ux-mode h4,
+body.modern-ux-mode h5,
+body.modern-ux-mode h6,
+body.modern-ux-mode .c-logo {
+    font-family: 'Noto Serif TC', serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+}
+
+/* Header & Menu modernizer */
+body.modern-ux-mode .c-layout-header,
+body.modern-ux-mode .c-layout-header .c-navbar {
+    background-color: rgba(250, 248, 245, 0.95) !important;
+    background: rgba(250, 248, 245, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Change header menu text color and sizing */
+body.modern-ux-mode .c-mega-menu .nav > li > a {
+    color: #2b2b2b !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    transition: all 0.3s ease;
+}
+
+body.modern-ux-mode .c-mega-menu .nav > li > a:hover {
+    color: #2e5927 !important; /* Forest green */
+}
+
+/* Float accessories like Onoteru */
+body.modern-ux-mode .c-brand img {
+    filter: brightness(0.1); /* make logo black/charcoal if it's white */
+}
+
+/* Title Component (Section Headings) */
+body.modern-ux-mode .c-content-title-1 {
+    margin-bottom: 60px !important;
+}
+
+body.modern-ux-mode .c-content-title-1 h3 {
+    font-size: 28px !important;
+    color: #2b2b2b !important;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+body.modern-ux-mode .c-content-title-1 h3::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 40px !important;
+    height: 2px !important;
+    background-color: #2e5927 !important; /* Moss Green line */
+}
+
+body.modern-ux-mode .c-line-center.c-theme-bg {
+    display: none !important; /* Hide old heavy bootstrap lines */
+}
+
+/* Section Breathing Room */
+body.modern-ux-mode .c-content-box {
+    padding: 90px 0 !important;
+    background-color: transparent !important;
+}
+
+/* Hero Section / Slider modernizer */
+body.modern-ux-mode .c-singup-form {
+    background: transparent !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 900px !important;
+    text-align: center !important;
+    z-index: 99 !important;
+    pointer-events: none !important;
+}
+
+body.modern-ux-mode .c-singup-form h3 {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-size: 36px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.16em !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3) !important;
+    backdrop-filter: none !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 767px) {
+    body.modern-ux-mode .c-singup-form h3 {
+        font-size: 26px !important;
+        letter-spacing: 0.12em !important;
+        line-height: 1.5 !important;
+    }
+}
+
+body.modern-ux-mode .c-singup-form h3 span {
+    color: #dfba73 !important; /* Elegant temple gold/bronze color */
+    font-weight: 600 !important;
+    border-bottom: 2px solid #dfba73 !important;
+    padding-bottom: 4px !important;
+    margin: 0 4px !important;
+}
+
+/* News List Item to Modern Card */
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02) !important;
+    border-radius: 6px !important;
+    margin-bottom: 25px !important;
+    padding: 25px 30px !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 30px rgba(46, 89, 39, 0.08) !important;
+    border-color: rgba(46, 89, 39, 0.15) !important;
+}
+
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row h4.c-font-23 a {
+    color: #2b2b2b !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    transition: color 0.3s ease;
+    text-decoration: none !important;
+}
+
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row h4.c-font-23 a:hover {
+    color: #2e5927 !important;
+}
+
+/* Remove old ugly mask.png from list page */
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row div[style*="mask.png"] {
+    display: none !important;
+}
+
+body.modern-ux-mode .c-content-client-logos-slider-1 ul li.row p {
+    color: #666 !important;
+    font-size: 14px !important;
+    height: auto !important; /* Allow normal expansion */
+    overflow: visible !important;
+}
+
+/* Buttons modernizer */
+body.modern-ux-mode .btn {
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    border: 1px solid transparent !important;
+}
+
+body.modern-ux-mode .btn-success,
+body.modern-ux-mode .btn-block {
+    background-color: transparent !important;
+    color: #2e5927 !important;
+    border: 1px solid #2e5927 !important;
+    box-shadow: none !important;
+    padding: 12px 30px !important;
+}
+
+body.modern-ux-mode .btn-success:hover,
+body.modern-ux-mode .btn-block:hover {
+    background-color: #2e5927 !important;
+    color: #ffffff !important;
+}
+
+/* Footer modernizer */
+body.modern-ux-mode footer.c-layout-footer-6 {
+    background-color: #1c261b !important; /* Elegant dark forest green-black */
+    color: rgba(255,255,255,0.7) !important;
+}
+
+body.modern-ux-mode footer.c-layout-footer-6 .c-postfooter {
+    background-color: transparent !important;
+}
+
+body.modern-ux-mode footer.c-layout-footer-6 p.c-copyright {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 13px !important;
+}
+
+body.modern-ux-mode footer.c-layout-footer-6 p.c-copyright span {
+    color: rgba(255,255,255,0.4) !important;
+}
+
+/* Mobile Navigation Modernizer (Onoteru Clean Light Aesthetic) */
+@media (max-width: 991px) {
+    /* Make mobile navigation header container light-themed in modern UX mode */
+    body.modern-ux-mode .c-layout-header.c-layout-header-dark-mobile,
+    body.modern-ux-mode .c-layout-header.c-layout-header-dark-mobile .c-navbar {
+        background-color: #faf8f5 !important;
+        background: #faf8f5 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+    }
+    
+    /* Make mobile navigation dropdown menu container light-themed */
+    body.modern-ux-mode .c-layout-header-dark-mobile .c-mega-menu {
+        background-color: #faf8f5 !important;
+        border-top: 1px solid rgba(0,0,0,0.08) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+    }
+    
+    /* Force mobile menu items to have dark text and transparent/light background */
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li > a {
+        color: #2b2b2b !important;
+        background-color: transparent !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+        padding-left: 25px !important;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        font-size: 15px !important;
+    }
+    
+    /* Active/Hover states in mobile menu */
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li > a:hover,
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li > a:focus,
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li.c-active > a {
+        color: #2e5927 !important; /* Forest Green active */
+        background-color: rgba(46, 89, 39, 0.05) !important;
+    }
+    
+    /* Style submenus in mobile view */
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li .dropdown-menu {
+        background-color: #f4f1eb !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+        padding: 0 !important;
+    }
+    
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li .dropdown-menu > li > a {
+        color: #444444 !important;
+        background-color: transparent !important;
+        padding-left: 45px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        font-size: 14px !important;
+        border-bottom: 1px solid rgba(0,0,0,0.03) !important;
+    }
+    
+    body.modern-ux-mode .c-mega-menu-dark-mobile.c-mega-menu .nav > li .dropdown-menu > li > a:hover {
+        color: #2e5927 !important;
+        background-color: rgba(46, 89, 39, 0.05) !important;
+    }
+
+    /* Custom Temple Menu Button for Mobile (Replaces hamburger lines) */
+    body.modern-ux-mode .c-hor-nav-toggler {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    body.modern-ux-mode .c-hor-nav-toggler .c-line {
+        display: none !important;
+    }
+    
+    body.modern-ux-mode .c-hor-nav-toggler::before {
+        content: "" !important;
+        display: block !important;
+        width: 26px !important;
+        height: 26px !important;
+        background-color: #2b2b2b !important; /* Default dark charcoal color */
+        /* Custom Swallowtail Chinese Temple Roof SVG */
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 22 C 14 22, 18 14, 32 14 C 46 14, 50 22, 60 22'/%3E%3Cpath d='M12 22 L 12 36 L 52 36 L 52 22'/%3E%3Cpath d='M8 36 C 16 36, 20 30, 32 30 C 44 30, 48 36, 56 36'/%3E%3Cpath d='M16 36 L 16 54 L 48 54 L 48 36'/%3E%3Cline x1='22' y1='36' x2='22' y2='54'/%3E%3Cline x1='42' y1='36' x2='42' y2='54'/%3E%3Cpath d='M28 54 L 28 44 C 28 44, 36 44, 36 44 L 36 54'/%3E%3C/svg%3E") !important;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 22 C 14 22, 18 14, 32 14 C 46 14, 50 22, 60 22'/%3E%3Cpath d='M12 22 L 12 36 L 52 36 L 52 22'/%3E%3Cpath d='M8 36 C 16 36, 20 30, 32 30 C 44 30, 48 36, 56 36'/%3E%3Cpath d='M16 36 L 16 54 L 48 54 L 48 36'/%3E%3Cline x1='22' y1='36' x2='22' y2='54'/%3E%3Cline x1='42' y1='36' x2='42' y2='54'/%3E%3Cpath d='M28 54 L 28 44 C 28 44, 36 44, 36 44 L 36 54'/%3E%3C/svg%3E") !important;
+        -webkit-mask-size: contain !important;
+        mask-size: contain !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-repeat: no-repeat !important;
+        -webkit-mask-position: center !important;
+        mask-position: center !important;
+        position: absolute !important;
+        top: 4px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    body.modern-ux-mode .c-hor-nav-toggler::after {
+        content: "MENU" !important;
+        display: block !important;
+        font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        color: #2b2b2b !important;
+        position: absolute !important;
+        bottom: 4px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1 !important;
+        transition: color 0.3s ease !important;
+    }
+    
+    body.modern-ux-mode .c-hor-nav-toggler:hover::before {
+        background-color: #2e5927 !important;
+    }
+    
+    body.modern-ux-mode .c-hor-nav-toggler:hover::after {
+        color: #2e5927 !important;
+    }
+    
+    /* Mobile search icon - make it dark charcoal */
+    body.modern-ux-mode .c-search-toggler {
+        color: #2b2b2b !important;
+    }
+    
+    /* In mobile mode, make the logo dark charcoal */
+    body.modern-ux-mode .c-brand img.c-mobile-logo {
+        filter: brightness(0.1) !important;
+    }
+}
+
+/* Hide Search Icons in Modern UX Mode (Both Desktop & Mobile) */
+body.modern-ux-mode .c-search-toggler,
+body.modern-ux-mode .c-search-toggler-wrapper,
+body.modern-ux-mode button.c-search-toggler,
+body.modern-ux-mode a.c-search-toggler,
+body.modern-ux-mode li.c-search-toggler-wrapper,
+body.modern-ux-mode .fa-search {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+
