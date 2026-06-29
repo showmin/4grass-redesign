@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四草大眾廟官方網站視覺與體驗升級提案</title>
+    
+    <!-- Google Fonts: Noto Serif & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --text-color: #2b2b2b;
+            --accent-gold: #dfba73;
+            --accent-green: #2e5927;
+            --border-color: rgba(46, 89, 39, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+            line-height: 1.8;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Temple style swallowtail header line accent */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-gold), var(--accent-green));
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--text-color);
+            line-height: 1.4;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: var(--accent-green);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .intro-box {
+            font-size: 16px;
+            color: #555555;
+            background: rgba(46, 89, 39, 0.03);
+            border-left: 4px solid var(--accent-green);
+            padding: 20px 25px;
+            margin-bottom: 40px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin: 40px 0 25px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+        
+        .upgrade-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s ease;
+        }
+        
+        .upgrade-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 89, 39, 0.06);
+            border-color: rgba(46, 89, 39, 0.15);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .card-num {
+            background: var(--accent-green);
+            color: #ffffff;
+            font-family: 'Noto Serif TC', serif;
+            font-size: 14px;
+            font-weight: 700;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .comp-row {
+            display: flex;
+            gap: 10px;
+            font-size: 15px;
+        }
+        
+        .comp-label {
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            height: fit-content;
+            margin-top: 3px;
+            flex-shrink: 0;
+            letter-spacing: 0.05em;
+        }
+        
+        .comp-label.before {
+            background: #ffebeb;
+            color: #d12b2b;
+        }
+        
+        .comp-label.after {
+            background: #e8f9e8;
+            color: #1e7a1e;
+        }
+        
+        .comp-label.benefit {
+            background: #fbf0db;
+            color: #b58110;
+        }
+        
+        .comp-text {
+            color: #444444;
+        }
+        
+        .comp-text strong {
+            color: var(--text-color);
+        }
+        
+        /* Switch instructions */
+        .instruction-box {
+            background: #faf8f5;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+        
+        .instruction-box ul {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .instruction-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        
+        .instruction-box li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 16px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: #888888;
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            .container {
+                padding: 35px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .upgrade-card {
+                padding: 20px;
+            }
+            
+            .card-title {
+                font-size: 16px;
+            }
+            
+            .comp-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+            
+            .comp-label {
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>四草大眾廟官方網站<br>視覺與體驗升級提案</h1>
+        <div class="subtitle">專為廟方委員與大眾設計的無痛美化方案</div>
+    </header>
+    
+    <div class="intro-box">
+        為了讓「四草大眾廟」的官方網站能更好地展現我們深厚的<strong>在地宮廟文化</strong>與<strong>台江綠色隧道生態美景</strong>，我們特別規劃了這套「視覺與體驗升級方案」。<br><br>
+        本方案的核心特色是<strong>「不改動現有網站後台系統」</strong>，不影響任何原有網站功能，僅針對「畫面外觀」與「手機閱讀體驗」進行精緻的美化，提供無痛升級。
+    </div>
+    
+    <div class="section-title">一、 七大「有感升級」重點說明</div>
+    
+    <!-- Card 1 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">1</div>
+            <div class="card-title">首頁大圖完全解封，第一眼視覺更震撼</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">一進入首頁，美麗的綠色隧道大圖正中央會被一個<strong>巨大、黑壓壓的灰色大方框</strong>遮擋住，遮蔽了美景。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">我們<strong>移除了灰色背景方框</strong>，將標題字體改為高雅的書法宋體字置中漂浮在照片中央，並將「四草大眾廟」塗上象徵神聖尊榮的<strong>古銅金</strong>。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">移除了視覺阻礙，讓風景大圖完整呈現，整體質感大幅提升，呈現如國家地理雜誌般的開屏張力。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">2</div>
+            <div class="card-title">字體美感昇華，閱讀像讀精美雜誌</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">網頁文字使用一般電腦預設細字，字距極為擁擠，資訊密度高，眼睛容易疲勞。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">引進高質感的<strong>思源宋體</strong>（標題）與<strong>思源黑體</strong>（內文），同時拉寬字距、調大行距，並增加板塊留白。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">版面有了舒適的「呼吸感」，讀起來流暢舒服，襯托出大眾廟歷史的厚重感與尊貴感。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">3</div>
+            <div class="card-title">最新消息升級「明信片卡片」，好讀又好點</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">最新消息採用硬梆梆的純文字清單，底色還有老舊的灰色漸層，缺乏現代感。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">改用現代的<strong>「乾淨白色微陰影卡片網格」</strong>，滑鼠移過去時卡片會輕微往上漂浮、圖片會微微放大。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">版面非常活潑有現代感，對老人家或手機用戶而言，按鈕與標題範圍變寬大，更加容易點選。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 4 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">4</div>
+            <div class="card-title">手機選單全面光亮化，高對比易讀</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">在手機上點開選單，是<strong>「灰黑色背景配黑色字」</strong>，字與背景糊在一起，幾乎無法閱讀。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">手機選單改為乾淨利落的<strong>「白底、黑字、綠色重點」</strong>配色，字體極為清晰。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">即使在戶外大太陽下用手機瀏覽網站，選單內容也清清楚楚，解決了致命的字體對比度問題。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 5 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">5</div>
+            <div class="card-title">專屬設計的「宮殿燕尾脊」選單按鈕</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">手機版右上角是隨處可見的單調「三條橫線」漢堡選單按鈕，缺乏廟宇特色。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">我們精心設計了代表我們傳統宮廟建築的<strong>「燕尾脊廟宇屋頂」向量小圖示</strong>來取代三橫線，並在圖示下方加上「MENU」字樣。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">將我們特有的廟宇建築藝術融入介面，既有文化設計感，又容易辨識。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 6 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">6</div>
+            <div class="card-title">選單架構大瘦身，找東西變超快！</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">舊選單主分類有多達 10 個，甚至有些還藏到第三層（例如旅遊景點 -> 鄰近住宿 -> 飯店），找資訊如同走迷宮。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">精簡整合為 <strong>5 大核心分類（最新消息、乘船與參拜、大眾廟傳奇、精彩相簿、聯絡與交通）</strong>，並限定最多只有二級，社群平台連結改為圖示放在最底下。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">遊客一秒就能鎖定最熱門的「綠色隧道船票資訊」或「如何開車前來」，大幅減少尋找資料的點擊次數。</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Card 7 -->
+    <div class="upgrade-card">
+        <div class="card-header">
+            <div class="card-num">7</div>
+            <div class="card-title">子網頁「單欄大版面」與「貼心行動引導按鈕」</div>
+        </div>
+        <div class="comparison">
+            <div class="comp-row">
+                <span class="comp-label before">以前的樣子</span>
+                <span class="comp-text">子網頁（如大眾廟簡介）右邊擠了一個生硬的舊目錄，裡面全是舊架構的死板連結。</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label after">現在的改變</span>
+                <span class="comp-text">在新版模式下<strong>隱藏了右側邊欄，文章改為開闊的單欄版面</strong>。同時在文章最下方，動態加入了兩個亮眼的<strong>「快速行動引導按鈕」</strong>：<br>
+                - 🟢 規劃行程：觀光船票價與時刻表 ➔<br>
+                - 🧭 交通指引：如何前往四草大眾廟 ➔</span>
+            </div>
+            <div class="comp-row">
+                <span class="comp-label benefit">升級好處</span>
+                <span class="comp-text">版面像文化雜誌一樣乾淨、高雅；且在遊客讀完歷史或簡介後，直接提供最貼心的「船票與交通」大按鈕，主動引導遊客前往現場，非常人性化。</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section-title">二、 如何體驗「新舊一鍵切換」？</div>
+    
+    <div class="instruction-box">
+        我們在展示網頁的<strong>右下角</strong>做了一個浮動的切換器，您可以在任何電腦或手機上直接操作：
+        <ul>
+            <li>點擊切換至 <strong>「原始四草樣式 🔘」</strong>：網站會完全還原為原本的舊版畫面，包括舊的配色、10 大選單結構與灰色方框。</li>
+            <li>點擊切換至 <strong>「體驗：新版視覺 🟢」</strong>：網站會立刻在同一個畫面上變身為精緻的現代文化新版畫面，連選單架構與底部的快速按鈕也會同步轉換。</li>
+        </ul>
+        您可以直接用平板或手機秀給大眾廟委員們看這個「一鍵變身」的效果，親身感受升級前後巨大的質感落差！
+    </div>
+    
+    <footer>
+        四草大眾廟網站視覺重塑專案組 &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>
